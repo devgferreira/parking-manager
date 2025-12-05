@@ -27,5 +27,10 @@ namespace Establishment.Domain.ValueObjects
             }
             return Result.Success(new Phone(digitsOnlyPhone));
         }
+
+        public override string ToString()
+        {
+            return Value;
+        }
     }
 }

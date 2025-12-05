@@ -54,6 +54,10 @@ namespace Establishment.Domain.ValueObjects
 
             return Result.Success(new Cnpj(digitsOnlyCnpj));
         }
+        public override string ToString()
+        {
+            return Value;
+        }
 
     }
 }

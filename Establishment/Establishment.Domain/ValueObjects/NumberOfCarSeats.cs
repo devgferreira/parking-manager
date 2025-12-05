@@ -21,5 +21,9 @@ namespace Establishment.Domain.ValueObjects
             }
             return Result.Success(new NumberOfCarPlaces(rawNumberOfCarSeats));
         }
+        public override string ToString()
+        {
+            return Value;
+        }
     }
 }

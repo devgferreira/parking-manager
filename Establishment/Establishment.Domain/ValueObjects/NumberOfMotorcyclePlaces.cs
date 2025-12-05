@@ -20,5 +20,9 @@ namespace Establishment.Domain.ValueObjects
             }
             return Result.Success(new NumberOfMotorcyclePlaces(rawNumberOfMotorcyclePlaces));
         }
+        public override string ToString()
+        {
+            return Value;
+        }
     }
 }
