@@ -14,5 +14,16 @@ namespace Establishment.Application.DTO.Establishment
         public string Phone { get; private set; }
         public int NumberOfCarPlaces { get; private set; }
         public int NumberOfMotorcyclelaces { get; private set; }
+
+        public EstablishmentDTO(int id, string name, string cnpj, string address, string phone, int numberOfCarPlaces, int numberOfMotorcyclelaces)
+        {
+            Id = id;
+            Name = name;
+            Cnpj = cnpj;
+            Address = address;
+            Phone = phone;
+            NumberOfCarPlaces = numberOfCarPlaces;
+            NumberOfMotorcyclelaces = numberOfMotorcyclelaces;
+        }
     }
 }

@@ -15,8 +15,6 @@ namespace Establishment.Application.Service.Establishment
     {
         private readonly IEstablishmentRepository establishmentRepository;
 
-
-
         public async Task<Result> CreateEstablishment(EstablishmentCreateOrUpdateDTO establishment)
         {
             var result = ValidateEstablishmentCreateOrUpdate(establishment);
@@ -33,9 +31,12 @@ namespace Establishment.Application.Service.Establishment
             return Result.Success();
         }
 
-        public Task<Result> SelectEstablishment(EstablishmentRequest request)
+        public async Task<Result> SelectEstablishment(EstablishmentRequest request)
         {
-            throw new NotImplementedException();
+
+            var result = await establishmentRepository.SelectEstablishment(request);
+
+            return Result.Success(result.Select(e => new EstablishmentDTO(e.Id, e.Cnpj.ToString(), e.Name, e.Address, e.Phone.ToString(), int.Parse(e.NumberOfCarPlaces.ToString()), int.Parse(e.NumberOfMotorcyclelaces.ToString())))); // ajsuta isso futuramente
         }
 
         public async Task<Result> UpdateEstablishment(int id, EstablishmentCreateOrUpdateDTO establishment)
