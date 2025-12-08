@@ -10,7 +10,7 @@ namespace Establishment.Application.Interface.Establishment
     public interface IEstablishmentService
     {
         Task<Result> CreateEstablishment(EstablishmentCreateOrUpdateDTO establishment);
-        Task<Result> UpdateEstablishment(EstablishmentCreateOrUpdateDTO establishment);
+        Task<Result> UpdateEstablishment(int id, EstablishmentCreateOrUpdateDTO establishment);
         Task<Result> DeleteEstablishment(int id);
         Task<Result> SelectEstablishment(EstablishmentRequest request);
     }
