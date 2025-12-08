@@ -15,6 +15,11 @@ namespace Establishment.Application.Service.Establishment
     {
         private readonly IEstablishmentRepository establishmentRepository;
 
+        public EstablishmentService(IEstablishmentRepository establishmentRepository)
+        {
+            this.establishmentRepository = establishmentRepository;
+        }
+
         public async Task<Result> CreateEstablishment(EstablishmentCreateOrUpdateDTO establishment)
         {
             var result = ValidateEstablishmentCreateOrUpdate(establishment);
