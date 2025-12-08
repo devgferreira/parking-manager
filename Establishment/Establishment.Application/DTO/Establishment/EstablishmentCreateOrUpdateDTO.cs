@@ -11,6 +11,6 @@ namespace Establishment.Application.DTO.Establishment
         public string Address { get; private set; }
         public string Phone { get; private set; }
         public int NumberOfCarPlaces { get; private set; }
-        public int NumberOfMotorcyclelaces { get; private set; }
+        public int NumberOfMotorcyclePlaces { get; private set; }
     }
 }
