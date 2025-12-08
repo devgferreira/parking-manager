@@ -27,9 +27,10 @@ namespace Establishment.Application.Service.Establishment
             return result;
         }
 
-        public Task<Result> DeleteEstablishment(int id)
+        public async Task<Result> DeleteEstablishment(int id)
         {
-            throw new NotImplementedException();
+            await establishmentRepository.DeleteEstablishment(id);
+            return Result.Success();
         }
 
         public Task<Result> SelectEstablishment(EstablishmentRequest request)
@@ -37,10 +38,13 @@ namespace Establishment.Application.Service.Establishment
             throw new NotImplementedException();
         }
 
-        public Task<Result> UpdateEstablishment(EstablishmentCreateOrUpdateDTO establishment)
+        public async Task<Result> UpdateEstablishment(int id, EstablishmentCreateOrUpdateDTO establishment)
         {
-            throw new NotImplementedException();
+            var result = ValidateEstablishmentCreateOrUpdate(establishment);
+            await establishmentRepository.UpdateEstablishment(id, result.Value);
+            return result;
         }
+
 
 
         private Result<EstablishmentInfo> ValidateEstablishmentCreateOrUpdate(EstablishmentCreateOrUpdateDTO dto)
